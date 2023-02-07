@@ -2,12 +2,12 @@ const formEl = document.querySelector('.login-form');
 
 const createUserData = (event) => {
   event.preventDefault();
-  const email = event.currentTarget.elements.email.value;
-  const password = event.currentTarget.elements.password.value;
+  const email = event.currentTarget.email.value.trim();
+  const password = event.currentTarget.password.value;
   const formData = {email, password};
 
   if (!email || !password) {
-    alert('Всі поля повинні бути заповнені / All fields must be filled');
+    return alert('Всі поля повинні бути заповнені / All fields must be filled');
   }
   console.log(formData);
   event.currentTarget.reset();
